@@ -1,0 +1,31 @@
+static int countingValleys(int n, string s) {
+            char[] inputlist=s.ToCharArray();
+            int level=0;
+            int count=0;
+            foreach(var i in inputlist)
+            {
+                if(i=='U')
+                {
+                    level++;
+                }
+                if(i=='D')
+                {
+                    level--;
+
+
+
+                }
+
+                if(level==0 && i=='U'){
+
+                    count++;
+                }
+
+
+
+            }
+
+return count;
+
+
+    }
