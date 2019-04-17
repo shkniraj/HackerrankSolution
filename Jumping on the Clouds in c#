@@ -1,0 +1,24 @@
+static int jumpingOnClouds(int[] c) {
+        int count = 0;
+            for (int i = 0; i < c.Length;)
+            {
+                if ((i + 2) < c.Length && c[i + 2] == 0)
+                {
+                    i = i + 2;
+                    count++;
+                }
+
+                else if ((i + 1) < c.Length)
+                {
+                    count++;
+                    i++;
+                }
+                else
+                {
+                    i++;
+                }
+                
+
+            }
+            return count;
+    }
