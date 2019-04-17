@@ -1,0 +1,35 @@
+static long repeatedString(string s, long n) {
+          char[] arr=s.ToCharArray();
+          int count=0;
+          long total=0;
+          foreach(var i in arr)
+          {
+              if(i=='a')
+              {
+                  count++;
+              }
+            
+          }
+
+            if(n%arr.Length==0)
+            {
+                total=(n/arr.Length)*count;
+            }
+            else
+            {
+                total=(n/arr.Length)*count;
+                var rem=n%arr.Length;
+                for(var i=0;i<rem;i++)
+                {
+                    if(arr[i]=='a')
+                    {
+                        total++;
+                    }
+                }
+
+
+            }
+            return total;
+
+
+    }
