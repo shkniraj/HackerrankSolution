@@ -1,0 +1,36 @@
+/ Complete the minimumSwaps function below.
+    static int minimumSwaps(int[] arr) {
+      //Create a Dictionary to store the array value as key and index as value
+       Dictionary<int, int> dict = new Dictionary<int, int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                dict.Add(arr[i], i);
+
+            }
+            int len = arr.Length;
+            int count = 0;
+
+            for (int i = 0; i < len; i++)
+            {
+                if (arr[i] != i + 1)//checking if it is required to swap or not
+                {
+                    int temp = arr[i];
+                    arr[i] = i + 1;
+                    arr[dict[i + 1]] = temp;
+                    int stemp = dict[i + 1];//also need to change the dictionary key value pair
+                    dict[i + 1] = i;
+
+                    dict[temp] = stemp;
+                    count++;
+
+                }
+
+
+
+
+            }
+            return count;
+
+       
+    }
